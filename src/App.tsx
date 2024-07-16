@@ -6,6 +6,7 @@ import QUESTIONS_beyblade from './assets/questions_beyblade';
 import questions_space from './assets/questions_space';
 import questions_english from './assets/questions_english';
 import questions_cs from './assets/questions_christianstudies';
+import questions_weather from './assets/questions_weather';
 
 import { Card, Typography } from '@mui/material';
 import questions_math from './assets/questions_math';
@@ -46,6 +47,10 @@ export default function StandardImageList() {
       img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
       title: 'Christian Studies',
     },
+    {
+      img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
+      title: 'Weather',
+    },
   ];
 
   function onSelection(selectedTopic) {
@@ -61,7 +66,10 @@ export default function StandardImageList() {
       setQuestions(questions_math);
     } else if (selectedTopic === 'Christian Studies') {
       setQuestions(questions_cs);
+    } else if (selectedTopic === 'Weather') {
+      setQuestions(questions_weather);
     }
+
     setDisplayQuiz(true);
   }
 
