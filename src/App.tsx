@@ -68,7 +68,7 @@ export default function StandardImageList() {
   return (
     <>
       <Typography variant='h3' component='h3'>
-        Welcome ! Please pick a topic for the quiz!
+        Welcome to Kiddo Quiz! Please pick a topic for the quiz!
       </Typography>
 
       {displayQuiz && <Quiz QUESTIONS={questions}></Quiz>}
