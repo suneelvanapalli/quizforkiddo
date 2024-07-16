@@ -1,0 +1,138 @@
+name: Build and run tests (quiz-app\01-starting-project)
+
+on:
+  push:
+    branches: ['master']
+    paths:
+      - 'quiz-app/01-starting-project/**'
+      - '.github/workflows/build-quiz-app.yml'
+
+  pull_request:
+    types:
+      - opened
+    branches:
+      - master
+      - main
+      - feature/*
+    paths:
+      - 'quiz-app/01-starting-project/**'
+
+defaults:
+  run:
+    working-directory: ./quiz-app/01-starting-project
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+  lint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4      
+
+      - name: Cache npm packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: node-modules-${{hashFiles('**/package-lock.json')}}
+
+      - name: Install packages
+        run: |
+          npm install
+
+      - name: Linting
+        run: |
+          npm run lint
+
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      script-file: ${{steps.publish.outputs.script-file}}
+    strategy:
+      matrix:
+        node-version: [20.x]
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+
+      - name: Cache npm packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: node-modules-${{hashFiles('**/package-lock.json')}}
+
+      - name: Install packages
+        run: |
+          npm install
+
+      - name: Build
+        run: |
+          npm run build
+
+      - name: publish file name
+        id: publish
+        run: |
+          find dist/assets/*.js -type f -execdir echo 'script-file={}' >> $GITHUB_OUTPUT ';'
+
+      - name: Get files
+        run: |
+          cd dist
+          dir
+
+      - name: Upload artificats
+        uses: actions/upload-artifact@v4
+        with:
+          name: 'dist-files'
+          path: quiz-app/01-starting-project/dist
+
+      - name: Run Tests
+        run: |
+          npm run test
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+
+      - name: Cache npm packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: node-modules-${{hashFiles('**/package-lock.json')}}
+      - name: Install packages
+        run: |
+          npm install
+
+      - name: Deploy
+        run: |
+          echo "Deployed code"
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: 'dist-files'
+      - name: Output downloaded files
+        run: ls
+      - name: output file name  from build job ouput
+        run: echo '${{needs.build.outputs.script-file}}'
