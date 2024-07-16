@@ -1,0 +1,25 @@
+// Vitest Snapshot v1
+
+exports[`Header > should match snapshot 1`] = `
+<body>
+  <div>
+    <p
+      data-testid="header"
+    >
+      test
+    </p>
+  </div>
+</body>
+`;
+
+exports[`Header > should render a paragraph 1`] = `
+<body>
+  <div>
+    <p
+      data-testid="header"
+    >
+      test
+    </p>
+  </div>
+</body>
+`;
