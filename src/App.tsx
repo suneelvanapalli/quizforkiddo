@@ -84,25 +84,29 @@ export default function StandardImageList() {
 
   return (
     <>
-      <Typography variant='h3' component='h3'>
-        Welcome to Kiddo Quiz! Please pick a topic for the quiz!
-      </Typography>
-      <Divider></Divider>
-      <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-        <nav aria-label='main mailbox folders'>
-          <List>
-            {!displayQuiz &&
-              itemData.map((item) => (
-                <ListItem disablePadding>
-                  <ListItemButton onClick={() => onSelection(item.title)}>
-                    <ListItemText primary={item.title} />
-                  </ListItemButton>
-                </ListItem>
-              ))}
-          </List>
-        </nav>
-      </Box>
-
+      {!displayQuiz && (
+        <>
+          <Typography variant='h3' component='h3'>
+            Welcome to Kiddo Quiz! Please pick a topic for the quiz!
+          </Typography>
+          <Divider></Divider>
+          <Box
+            sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
+          >
+            <nav aria-label='main mailbox folders'>
+              <List>
+                {itemData.map((item) => (
+                  <ListItem disablePadding>
+                    <ListItemButton onClick={() => onSelection(item.title)}>
+                      <ListItemText primary={item.title} />
+                    </ListItemButton>
+                  </ListItem>
+                ))}
+              </List>
+            </nav>
+          </Box>{' '}
+        </>
+      )}
       {displayQuiz && <Quiz QUESTIONS={questions}></Quiz>}
     </>
   );
