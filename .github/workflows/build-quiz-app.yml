@@ -1,11 +1,8 @@
-name: Build and run tests (quiz-app\01-starting-project)
+name: Build and run tests
 
 on:
   push:
     branches: ['master']
-    paths:
-      - 'quiz-app/01-starting-project/**'
-      - '.github/workflows/build-quiz-app.yml'
 
   pull_request:
     types:
@@ -14,12 +11,7 @@ on:
       - master
       - main
       - feature/*
-    paths:
-      - 'quiz-app/01-starting-project/**'
-
-defaults:
-  run:
-    working-directory: ./quiz-app/01-starting-project
+    
 
 jobs:
   setup:
@@ -99,7 +91,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: 'dist-files'
-          path: quiz-app/01-starting-project/dist
+          path: dist
 
       - name: Run Tests
         run: |

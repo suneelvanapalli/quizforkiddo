@@ -1,10 +1,6 @@
 name: Build and Deploy Quiz app to Azure Static web app
 on: workflow_dispatch
 
-defaults:
-  run:
-    working-directory: ./quiz-app/01-starting-project
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -56,7 +52,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: 'dist-files'
-          path: quiz-app/01-starting-project/dist
+          path: dist
   deploy:
     environment:
       name: github-pages
