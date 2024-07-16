@@ -43,26 +43,16 @@ jobs:
         run: |
           npm run build
 
-      - name: publish file name
-        id: publish
-        run: |
-          find dist/assets/*.js -type f -execdir echo 'script-file={}' >> $GITHUB_OUTPUT ';'
-
-      - name: Upload artificats
-        uses: actions/upload-artifact@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: 'dist-files'
-          path: dist
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
+            # Upload dist folder
+            path: 'dist'
+
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v3
-        with:
-          name: 'dist-files'
-      
+        uses: actions/deploy-pages@v4
+ 
