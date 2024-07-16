@@ -1,4 +1,4 @@
-name: Build and Deploy Quiz app to Azure Static web app
+name: Build and Deploy App
 on: workflow_dispatch
 
 jobs:
@@ -63,4 +63,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
+        with:
+          name: 'dist-files'
       
