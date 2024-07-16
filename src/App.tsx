@@ -19,6 +19,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import InboxIcon from '@mui/icons-material/Inbox';
 import DraftsIcon from '@mui/icons-material/Drafts';
+import questions_countries from './assets/questions_countries';
 
 export default function StandardImageList() {
   const [displayQuiz, setDisplayQuiz] = useState<boolean>(false);
@@ -60,6 +61,10 @@ export default function StandardImageList() {
       img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
       title: 'Weather',
     },
+    {
+      img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
+      title: 'Countries, Capitals',
+    },
   ];
 
   function onSelection(selectedTopic) {
@@ -77,6 +82,8 @@ export default function StandardImageList() {
       setQuestions(questions_cs);
     } else if (selectedTopic === 'Weather') {
       setQuestions(questions_weather);
+    } else if (selectedTopic === 'Countries, Capitals') {
+      setQuestions(questions_countries);
     }
 
     setDisplayQuiz(true);
