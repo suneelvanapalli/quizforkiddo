@@ -8,8 +8,17 @@ import questions_english from './assets/questions_english';
 import questions_cs from './assets/questions_christianstudies';
 import questions_weather from './assets/questions_weather';
 
-import { Card, Typography } from '@mui/material';
+import { Card, List, Typography } from '@mui/material';
 import questions_math from './assets/questions_math';
+import BasicList from './components/BasicList';
+import Box from '@mui/material/Box';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Divider from '@mui/material/Divider';
+import InboxIcon from '@mui/icons-material/Inbox';
+import DraftsIcon from '@mui/icons-material/Drafts';
 
 export default function StandardImageList() {
   const [displayQuiz, setDisplayQuiz] = useState<boolean>(false);
@@ -78,12 +87,23 @@ export default function StandardImageList() {
       <Typography variant='h3' component='h3'>
         Welcome to Kiddo Quiz! Please pick a topic for the quiz!
       </Typography>
+      <Divider></Divider>
+      <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+        <nav aria-label='main mailbox folders'>
+          <List>
+            {!displayQuiz &&
+              itemData.map((item) => (
+                <ListItem disablePadding>
+                  <ListItemButton onClick={() => onSelection(item.title)}>
+                    <ListItemText primary={item.title} />
+                  </ListItemButton>
+                </ListItem>
+              ))}
+          </List>
+        </nav>
+      </Box>
 
       {displayQuiz && <Quiz QUESTIONS={questions}></Quiz>}
-      {!displayQuiz &&
-        itemData.map((item) => (
-          <Card onClick={() => onSelection(item.title)}>{item.title}</Card>
-        ))}
     </>
   );
 }
