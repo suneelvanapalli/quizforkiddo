@@ -9,7 +9,7 @@
     "build": "vite build --base=/quizforkiddo/",
     "lint": "eslint . --ext js,jsx --fix src --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "test": "vitest run",
+    "test": "vitest run --reporter=json",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
