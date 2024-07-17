@@ -38,12 +38,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Cache npm packages
+        id: cache
         uses: actions/cache@v4
         with:
-          path: ~/.npm
+          path: node_modules
           key: node-modules-${{hashFiles('**/package-lock.json')}}
 
       - name: Install packages
+        if: steps.cache.outputs.cache-hit != 'true'
         run: |
           npm install
 
@@ -63,12 +65,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Cache npm packages
+        id: cache
         uses: actions/cache@v4
         with:
-          path: ~/.npm
+          path: node_modules
           key: node-modules-${{hashFiles('**/package-lock.json')}}
 
       - name: Install packages
+        if: steps.cache.outputs.cache-hit != 'true'
         run: |
           npm install
 
@@ -120,6 +124,7 @@ jobs:
         with:
           path: node_modules
           key: node-modules-${{hashFiles('**/package-lock.json')}}
+
       - name: Install packages
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
