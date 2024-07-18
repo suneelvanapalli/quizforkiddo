@@ -891,7 +891,7 @@ export default [
     ],
   },
   {
-  id: '1',
+  id: 'vocabulary',
   name: 'Vocabulary and Spelling Quiz',
   description: 'Quiz on Vocabulary and Spelling for 7-year-olds',
   image: '',
