@@ -890,4 +890,63 @@ export default [
       },
     ],
   },
+  {
+  id: '1',
+  name: 'Vocabulary and Spelling Quiz',
+  description: 'Quiz on Vocabulary and Spelling for 7-year-olds',
+  image: '',
+  questions: [
+    {
+      id: 'q1',
+      text: 'Match the word "Library" to its definition:',
+      answers: ['A place where you can borrow books', 'A large body of saltwater', 'To laugh lightly', 'A colorful arc in the sky after rain'],
+    },
+    {
+      id: 'q2',
+      text: 'Fill in the blank: The elephant is the largest land ___.',
+      answers: ['animal', 'insect', 'bird', 'reptile'],
+    },
+    {
+      id: 'q3',
+      text: 'Spell the following word correctly: B_ll__n',
+      answers: ['Balloon', 'Balloan', 'Bolloun', 'Baloon'],
+    },
+    {
+      id: 'q4',
+      text: 'Unscramble the letters to form a word: sruhneis',
+      answers: ['sunshine', 'rhesuins', 'shirunes', 'inesrush'],
+    },
+    {
+      id: 'q5',
+      text: 'What is the opposite of "big"?',
+      answers: ['Small', 'Tall', 'Fast', 'Round'],
+    },
+    {
+      id: 'q6',
+      text: 'Which word means "to jump up and down"?',
+      answers: ['Bounce', 'Run', 'Skip', 'Walk'],
+    },
+    {
+      id: 'q7',
+      text: 'Which animal is known for its long neck?',
+      answers: ['Giraffe', 'Lion', 'Elephant', 'Zebra'],
+    },
+    {
+      id: 'q8',
+      text: 'What do you call a baby dog?',
+      answers: ['Puppy', 'Kitten', 'Calf', 'Foal'],
+    },
+    {
+      id: 'q9',
+      text: 'What is the color of the sky on a clear day?',
+      answers: ['Blue', 'Green', 'Red', 'Yellow'],
+    },
+    {
+      id: 'q10',
+      text: 'Match the word "Giggle" to its definition:',
+      answers: ['To laugh lightly', 'A large body of saltwater', 'A place where you can borrow books', 'Tasting very good'],
+    },
+  ],
+}
+
 ];
