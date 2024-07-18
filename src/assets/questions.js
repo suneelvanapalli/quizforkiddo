@@ -891,62 +891,179 @@ export default [
     ],
   },
   {
-  id: 'vocabulary',
-  name: 'Vocabulary and Spelling Quiz',
-  description: 'Quiz on Vocabulary and Spelling for 7-year-olds',
-  image: '',
-  questions: [
-    {
-      id: 'q1',
-      text: 'Match the word "Library" to its definition:',
-      answers: ['A place where you can borrow books', 'A large body of saltwater', 'To laugh lightly', 'A colorful arc in the sky after rain'],
-    },
-    {
-      id: 'q2',
-      text: 'Fill in the blank: The elephant is the largest land ___.',
-      answers: ['animal', 'insect', 'bird', 'reptile'],
-    },
-    {
-      id: 'q3',
-      text: 'Spell the following word correctly: B_ll__n',
-      answers: ['Balloon', 'Balloan', 'Bolloun', 'Baloon'],
-    },
-    {
-      id: 'q4',
-      text: 'Unscramble the letters to form a word: sruhneis',
-      answers: ['sunshine', 'rhesuins', 'shirunes', 'inesrush'],
-    },
-    {
-      id: 'q5',
-      text: 'What is the opposite of "big"?',
-      answers: ['Small', 'Tall', 'Fast', 'Round'],
-    },
-    {
-      id: 'q6',
-      text: 'Which word means "to jump up and down"?',
-      answers: ['Bounce', 'Run', 'Skip', 'Walk'],
-    },
-    {
-      id: 'q7',
-      text: 'Which animal is known for its long neck?',
-      answers: ['Giraffe', 'Lion', 'Elephant', 'Zebra'],
-    },
-    {
-      id: 'q8',
-      text: 'What do you call a baby dog?',
-      answers: ['Puppy', 'Kitten', 'Calf', 'Foal'],
-    },
-    {
-      id: 'q9',
-      text: 'What is the color of the sky on a clear day?',
-      answers: ['Blue', 'Green', 'Red', 'Yellow'],
-    },
-    {
-      id: 'q10',
-      text: 'Match the word "Giggle" to its definition:',
-      answers: ['To laugh lightly', 'A large body of saltwater', 'A place where you can borrow books', 'Tasting very good'],
-    },
-  ],
-}
-
+    id: 'vocabulary',
+    name: 'Vocabulary and Spelling Quiz',
+    description: 'Quiz on Vocabulary and Spelling for 7-year-olds',
+    image: '',
+    questions: [
+      {
+        id: 'q1',
+        text: 'Match the word "Library" to its definition:',
+        answers: [
+          'A place where you can borrow books',
+          'A large body of saltwater',
+          'To laugh lightly',
+          'A colorful arc in the sky after rain',
+        ],
+      },
+      {
+        id: 'q2',
+        text: 'Fill in the blank: The elephant is the largest land ___.',
+        answers: ['animal', 'insect', 'bird', 'reptile'],
+      },
+      {
+        id: 'q3',
+        text: 'Spell the following word correctly: B_ll__n',
+        answers: ['Balloon', 'Balloan', 'Bolloun', 'Baloon'],
+      },
+      {
+        id: 'q4',
+        text: 'Unscramble the letters to form a word: sruhneis',
+        answers: ['sunshine', 'rhesuins', 'shirunes', 'inesrush'],
+      },
+      {
+        id: 'q5',
+        text: 'What is the opposite of "big"?',
+        answers: ['Small', 'Tall', 'Fast', 'Round'],
+      },
+      {
+        id: 'q6',
+        text: 'Which word means "to jump up and down"?',
+        answers: ['Bounce', 'Run', 'Skip', 'Walk'],
+      },
+      {
+        id: 'q7',
+        text: 'Which animal is known for its long neck?',
+        answers: ['Giraffe', 'Lion', 'Elephant', 'Zebra'],
+      },
+      {
+        id: 'q8',
+        text: 'What do you call a baby dog?',
+        answers: ['Puppy', 'Kitten', 'Calf', 'Foal'],
+      },
+      {
+        id: 'q9',
+        text: 'What is the color of the sky on a clear day?',
+        answers: ['Blue', 'Green', 'Red', 'Yellow'],
+      },
+      {
+        id: 'q10',
+        text: 'Match the word "Giggle" to its definition:',
+        answers: [
+          'To laugh lightly',
+          'A large body of saltwater',
+          'A place where you can borrow books',
+          'Tasting very good',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'riddles',
+    name: 'Simple Riddles and Brainteasers',
+    description: 'A fun quiz of riddles and brainteasers for kids',
+    image: '',
+    questions: [
+      {
+        id: 'q1',
+        text: 'I’m tall when I’m young, and I’m short when I’m old. What am I?',
+        answers: ['A candle', 'A tree', 'A person', 'A pencil'],
+      },
+      {
+        id: 'q2',
+        text: 'What has to be broken before you can use it?',
+        answers: ['An egg', 'A window', 'A bottle', 'A lock'],
+      },
+      {
+        id: 'q3',
+        text: 'I’m full of keys but I can’t open any doors. What am I?',
+        answers: ['A piano', 'A map', 'A treasure chest', 'A book'],
+      },
+      {
+        id: 'q4',
+        text: 'What begins with T, ends with T, and has T in it?',
+        answers: ['A teapot', 'A tent', 'A tart', 'A ticket'],
+      },
+      {
+        id: 'q5',
+        text: 'What can travel around the world while staying in a corner?',
+        answers: ['A stamp', 'A letter', 'A plane', 'A postcard'],
+      },
+      {
+        id: 'q6',
+        text: 'What has a heart that doesn’t beat?',
+        answers: ['An artichoke', 'A clock', 'A potato', 'A chair'],
+      },
+      {
+        id: 'q7',
+        text: 'I’m light as a feather, yet the strongest man can’t hold me for much longer than a minute. What am I?',
+        answers: ['Breath', 'Water', 'A cloud', 'A balloon'],
+      },
+      {
+        id: 'q8',
+        text: 'What has one eye but can’t see?',
+        answers: ['A needle', 'A storm', 'A fish', 'A cyclops'],
+      },
+      {
+        id: 'q9',
+        text: 'What gets wetter as it dries?',
+        answers: ['A towel', 'A sponge', 'A mop', 'A cloth'],
+      },
+      {
+        id: 'q10',
+        text: 'What has a neck but no head?',
+        answers: ['A bottle', 'A guitar', 'A shirt', 'A vase'],
+      },
+      {
+        id: 'q11',
+        text: 'The more you take, the more you leave behind. What am I?',
+        answers: ['Footsteps', 'Time', 'Memories', 'Shadow'],
+      },
+      {
+        id: 'q12',
+        text: 'I have branches, but no fruit, trunk, or leaves. What am I?',
+        answers: ['A bank', 'A library', 'A store', 'A school'],
+      },
+      {
+        id: 'q13',
+        text: 'What can you catch but not throw?',
+        answers: ['A cold', 'A ball', 'A fish', 'A kite'],
+      },
+      {
+        id: 'q14',
+        text: 'I have keys but no locks. I have space but no room. You can enter, but you can’t go inside. What am I?',
+        answers: ['A keyboard', 'A ship', 'A car', 'A house'],
+      },
+      {
+        id: 'q15',
+        text: 'What is so fragile that saying its name breaks it?',
+        answers: ['Silence', 'Glass', 'A secret', 'A promise'],
+      },
+      {
+        id: 'q16',
+        text: 'What can run but never walks, has a mouth but never talks, has a head but never weeps, has a bed but never sleeps?',
+        answers: ['A river', 'A car', 'A clock', 'A shadow'],
+      },
+      {
+        id: 'q17',
+        text: 'What has keys that open no locks, space but no room, and you can enter but not go inside?',
+        answers: ['A keyboard', 'A riddle', 'A safe', 'A building'],
+      },
+      {
+        id: 'q18',
+        text: 'What has hands but can’t clap?',
+        answers: ['A clock', 'A statue', 'A robot', 'A glove'],
+      },
+      {
+        id: 'q19',
+        text: 'What has legs but doesn’t walk?',
+        answers: ['A table', 'A tree', 'A chair', 'A bed'],
+      },
+      {
+        id: 'q20',
+        text: 'What comes once in a minute, twice in a moment, but never in a thousand years?',
+        answers: ['The letter M', 'A second', 'A day', 'A century'],
+      },
+    ],
+  },
 ];
