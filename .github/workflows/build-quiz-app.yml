@@ -15,9 +15,17 @@ on:
 jobs:
   setup:
     runs-on: ${{matrix.node-version}}
+    continue-on-error: true
     strategy:
       matrix:
-        node-version: [18, 20.x]
+        node-version: [12, 14, 18, 20.x]
+        operating-system: [ubuntu-latest, windows-latest]
+        include:
+          - node-version: 16
+            operating-system: windows
+        exclude:
+          - node-version: 18
+            operating-system: windows
 
     steps:
       - name: checkout code

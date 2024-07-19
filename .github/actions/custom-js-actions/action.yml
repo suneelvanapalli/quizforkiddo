@@ -1,0 +1,10 @@
+name: 'Custom javascript action'
+description: 'Custom javascript action'
+runs:
+  using: 'node20'
+  main: 'index.js'
+inputs: 
+  dist-folder:
+    description: Path of the dist folder
+    required: true
+    defaultValue: dist

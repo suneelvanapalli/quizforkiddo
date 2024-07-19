@@ -59,8 +59,9 @@ jobs:
           path: 'dist'
 
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: ./.github/actions/custom-js-actions
+        with:
+          dist-folder: dist
 
       - name: Print page url
         run: |
