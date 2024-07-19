@@ -62,6 +62,8 @@ jobs:
         uses: ./.github/actions/custom-js-actions
         with:
           dist-folder: dist
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Print page url
         run: |
