@@ -4,7 +4,8 @@ import github from '@actions/github';
 
 const run = () => {
   const distFolder = core.getInput('dist-folder', { required: true });
-  exec.exec(`gh-pages -d ${distFolder}`);
+  //exec.exec(`gh-pages -d ${distFolder}`);
+  exec.exec(`ls`);
   //core.notice('Hello! from custom github action');
 };
 
