@@ -47,6 +47,7 @@ jobs:
 
       - name: Build
         run: |
+          echo ${{toJSON(github)}}
           npm run build
 
       - name: Setup Pages
